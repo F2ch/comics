@@ -1,0 +1,35 @@
+<ul id="slide-out"
+    class="side-nav"
+    materialize="sideNav"
+    [materializeActions]="menuAction"
+    [materializeParams]="['hide']"
+    (click)="closeMenu()">
+  <li>
+    <div class="user-view" *ngIf="user">
+      <div class="background">
+        <img src="../../../assets/img/sidenav/sidenavtochange.png" class="background-img">
+      </div>
+      <a href="#!user"><img class="circle" src=""></a>
+      <a href="#!name"><span class="white-text name">{{user.first_name}} {{user.last_name}}</span></a>
+      <a href="#!email"><span class="white-text email">{{user.email}}</span></a>
+    </div>
+  </li>
+  <li ><a [routerLink]="['/admin/dashboard']"><i
+    class="material-icons prefix">dashboard</i>Dashboard</a></li>
+  <li ><a [routerLink]="['/admin/subscriptions']"><i
+    class="material-icons prefix">assignment_turned_in</i>Souscriptions</a></li>
+  <li ><a [routerLink]="['/admin/forms']"><i
+    class="material-icons prefix">assignment</i>Formulaires</a></li>
+  <li><a [routerLink]="['/admin/users']"><i
+    class="material-icons prefix">people</i>Utilisateurs</a></li>
+  <li ><a [routerLink]="['/admin/profile']"><i
+    class="material-icons prefix">face</i>Mon profil</a></li>
+  <li>
+    <div class="divider"></div>
+  </li>
+  <li><a class="subheader">Cabinet Branchet</a></li>
+  <li><a class="waves-effect" href="auth/login"><i class="material-icons prefix icon-blue">account_circle</i>Se
+    connecter</a></li>
+  <li><a href="" (click)="onLogout()"><i class="material-icons md-light">settings_power</i>Déconnexion</a></li>
+</ul>
+

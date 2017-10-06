@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+// Import custom variables into global scope before loading Materialize styles.
+// This is required in order to declare our customized theme first, since SASS
+// not allow overwriting variables that easily.
+@import "./variables";
+
+// Import Materialize styles.
+// We are setting $roboto-font-path prior to loading the library, since it is
+// normally loaded from .angular-cli.json; and since we load Materialize
+// manually, this link is broken unless we fix it here.
+$roboto-font-path: "../node_modules/materialize-css/dist/fonts/roboto/";
+@import "../../../node_modules/materialize-css/sass/materialize";
+
+// Load custom styles
+@import "./styles";

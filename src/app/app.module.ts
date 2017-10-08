@@ -31,8 +31,6 @@ import {AlertService} from "./core/services/alert/alert.service";
       provide: HttpService,
       useFactory: HttpFactory,
       deps: [XHRBackend, Router, AlertService],
-
-
     }
   ],
   bootstrap: [AppComponent]

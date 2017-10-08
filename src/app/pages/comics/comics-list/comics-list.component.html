@@ -1,14 +1,14 @@
 <button (click)="clicked()">PUSH</button>
-<div *ngIf="comics">
+<div *ngIf="comic"></div>
 <ul class="collection" *ngFor="let comic of comics">
   <li class="collection-item avatar">
     <i class="material-icons circle black"></i>
-    <span class="title">Title</span>
+    <span class="title">{{comic.title}}</span>
     <p>First Line <br>
       Second Line
     </p>
     <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
   </li>
 </ul>
-</div>
+
 

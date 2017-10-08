@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import {ComicsService} from "../../../core/services/comics.service";
-import {Comic} from "../comics.model";
+import { Component, OnInit } from '@angular/core';
+import { ComicsService } from '../../../core/services/comics.service';
+import { Comic } from '../comics.model';
 
 @Component({
   selector: 'app-comics-list',
@@ -9,23 +9,25 @@ import {Comic} from "../comics.model";
 })
 export class ComicsListComponent implements OnInit {
   comics: Comic[];
+  comic: Comic;
 
 
 
   constructor(private comicsService: ComicsService) {}
 
   ngOnInit(): void {
-    /*this.comicsService.getComics()
+    this.comicsService.getComics()
       .subscribe(
-        comics => this.comics = comics)
-    console.log(this.comics.title);*/
+        resComics => { this.comics = resComics;
+          console.log('>>>>>>>>>1111111>>>>>>>>>>', this.comics);
+        });
   }
 
   clicked() {
     this.comicsService.getComics()
       .subscribe(
-        comics => { this.comics = comics;
-    console.log('>>>>>>>>>>>>>>>>>>>', this.comics);
+        resComics => { this.comics = resComics;
+    console.log('>>>>>>>>>222222222>>>>>>>>>>', this.comics);
         });
   }
   }

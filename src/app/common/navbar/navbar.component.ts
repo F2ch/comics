@@ -7,9 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  @Input() pageName: string;
-  @Input() icon: string;
-  @Input() lastImportDate: string;
+
 
   constructor() {}
 

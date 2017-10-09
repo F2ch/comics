@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, ViewChild} from '@angular/core';
 import { ComicsService } from '../../../core/services/comics.service';
 import { Comic } from '../comics.model';
+import {ComicsDetailComponent} from '../comics-detail/comics-detail.component';
 
 @Component({
   selector: 'app-comics-list',
@@ -8,27 +9,30 @@ import { Comic } from '../comics.model';
   styleUrls: ['./comics-list.component.scss'],
 })
 export class ComicsListComponent implements OnInit {
-  comics: Comic[];
-  comic: Comic;
+  comics: Comic[] = [];
+  selectedComic: Comic;
 
+  @ViewChild(ComicsDetailComponent)
+  private modalComponent: ComicsDetailComponent;
 
-
-  constructor(private comicsService: ComicsService) {}
+  constructor(private comicsService: ComicsService) {
+  }
 
   ngOnInit(): void {
     this.comicsService.getComics()
       .subscribe(
-        resComics => { this.comics = resComics;
-          console.log('>>>>>>>>>1111111>>>>>>>>>>', this.comics);
+        resComics => {
+          console.log(resComics);
+          this.comics = resComics;
         });
   }
 
-  clicked() {
-    this.comicsService.getComics()
-      .subscribe(
-        resComics => { this.comics = resComics;
-    console.log('>>>>>>>>>222222222>>>>>>>>>>', this.comics);
-        });
+  openDetails(comic) {
+    this.selectedComic = comic;
+  }
+
+  parseDate(comicDate) {
+    return comicDate.find(it => it.type === 'onsaleDate').date;
   }
   }
 

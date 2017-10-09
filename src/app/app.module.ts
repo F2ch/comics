@@ -1,18 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {NgModule, NO_ERRORS_SCHEMA} from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { Router } from '@angular/router';
 import { CommonsModule } from './common/common.modulde';
-import {ComicsListComponent} from "./pages/comics/comics-list/comics-list.component";
-import {ComicsService} from "./core/services/comics.service";
-import {HttpService} from "./core/services/http.service";
-import {HttpFactory} from "./core/core.module";
-import {HttpModule, XHRBackend} from "@angular/http";
-import {AlertService} from "./core/services/alert/alert.service";
+import { ComicsListComponent } from './pages/comics/comics-list/comics-list.component';
+import { ComicsService } from './core/services/comics.service';
+import { HttpService } from './core/services/http.service';
+import { HttpModule} from '@angular/http';
+import { AlertService } from './core/services/alert/alert.service';
 
 @NgModule({
+  schemas: [NO_ERRORS_SCHEMA],
   declarations: [
     AppComponent,
     ComicsListComponent,
@@ -27,11 +27,6 @@ import {AlertService} from "./core/services/alert/alert.service";
     ComicsService,
     HttpService,
     AlertService,
-    {
-      provide: HttpService,
-      useFactory: HttpFactory,
-      deps: [XHRBackend, Router, AlertService],
-    }
   ],
   bootstrap: [AppComponent]
 })

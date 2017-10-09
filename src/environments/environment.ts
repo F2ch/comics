@@ -5,7 +5,7 @@
 
 export const environment = {
   production: false,
-  apiEndpoint: 'http://gateway.marvel.com/v1/public/comics?',
+  apiEndpoint: 'http://gateway.marvel.com/v1/public/comics',
   AppName: 'Marvel',
   secret: '',
 };

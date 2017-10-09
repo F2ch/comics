@@ -6,13 +6,13 @@ import { MaterializeModule } from 'angular2-materialize';
 import { HttpService } from './services/http.service';
 import { Router } from '@angular/router';
 import { AlertService } from './services/alert/alert.service';
-
-export function HttpFactory(backend: XHRBackend,
-                            defaultOptions: RequestOptions,
-                            router: Router,
-                            alertService: AlertService): HttpService {
-  return new HttpService(backend, defaultOptions, router, alertService);
-}
+//
+// export function HttpFactory(backend: XHRBackend,
+//                             defaultOptions: RequestOptions,
+//                             router: Router,
+//                             alertService: AlertService): HttpService {
+//   return new HttpService(backend, defaultOptions, router, alertService);
+// }
 
 @NgModule({
   declarations: [

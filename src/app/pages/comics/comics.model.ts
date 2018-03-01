@@ -1,6 +1,7 @@
 export class Comic {
   constructor (public id: string,
                public title: string,
+               public prices : object,
                public description: string,
                public isbn: string,
                public thumbnail: any,

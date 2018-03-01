@@ -4,18 +4,23 @@
     [materializeActions]="menuAction"
     [materializeParams]="['hide']"
     (click)="closeMenu()">
-
   <li>
     <div class="user-view">
       <div class="background">
         <img src="/assets/img/background.png">
       </div>
-      <a href="#"><img class="circle" src="/assets/img/spider.jpg"></a>
-      <a href="#">MARVEL</a>
+      <div class="enteteContainer row">
+        <a href="#"><img class="circle col4" src="/assets/img/IMG_20161203_012030.jpg"></a>
+        <a href="#" class="col8">François Chandebois</a>
+      </div>
+      <a href="#">francoischandebois@gmail.com</a>
+      <a href="#">0682771661</a>
     </div>
   </li>
-  <li><a [routerLink]="['/pages/commics-list']"><i class="material-icons prefix">view_list</i>catalogue de comics</a></li>
-
-
+  <li><a [routerLink]="['/pages/bio']"><i class="material-icons prefix">face</i>Bio</a>
+  <li><a [routerLink]="['/pages/cv']"><i class="material-icons prefix">description</i>CV</a>
+  <li><a [routerLink]="['/pages/comics-list']"><i class="material-icons prefix">view_list</i>catalogue de comics</a>
+  </li>
+  <div class="divider"></div>
 </ul>
 

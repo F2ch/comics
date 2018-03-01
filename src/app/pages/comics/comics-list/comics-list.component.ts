@@ -22,12 +22,11 @@ export class ComicsListComponent implements OnInit {
     this.comicsService.getComics()
       .subscribe(
         resComics => {
-          console.log(resComics);
           this.comics = resComics;
         });
   }
 
-  openDetails(comic) {
+  openDetails(comic): void {
     this.selectedComic = comic;
   }
 

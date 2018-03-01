@@ -1,4 +1,4 @@
-<div>
+
 <ul class="collection" *ngFor="let comic of comics">
   <div class="row">
     <div class="col s12 m6">
@@ -15,5 +15,8 @@
     </div>
   </div>
 </ul>
-<app-comics-detail [currentComic]="selectedComic"></app-comics-detail>
+<div>
+<app-comics-detail (closeModal)="onCloseComicsDetails()" [currentComic]="selectedComic"></app-comics-detail>
 </div>
+
+

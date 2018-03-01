@@ -1,9 +1,11 @@
-<div class="modal" materialize="modal" [materializeActions]="modalAction">
+<div id="modal1" class="modal" materialize="modal" [materializeActions]="modalAction" >
   <div class="modal-content" *ngIf="comic">
-    <h4>Modal Header</h4>
-    <p>A bunch of text</p>
+    <h5>{{comic.title}}</h5>
+    <p>{{comic.description}}</p>
+    <p>Date de sortie: {{parseDate(comic.dates)| date: 'dd/MM/y'}}</p>
+    <p *ngIf="comic.prices">Prix: {{parsePrice(comic.prices)}}</p>
   </div>
   <div class="modal-footer">
-    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Fermer</a>
   </div>
 </div>
